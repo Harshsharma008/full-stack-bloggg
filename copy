@@ -1,0 +1,23 @@
+<Slider {...settings}>
+            {data.map((card, index) => (
+              <div key={index} className="flex flex-col items-center p-4 gap-2">
+                <div className="border-2 border-gray-200 bg-white overflow-hidden border-opacity-60 rounded-xl h-64 w-64 flex flex-col justify-start items-start p-4">
+                  <h1 className="title-font text-lg font-bold text-black text-left mb-3">
+                    {card.title}
+                  </h1>
+                  <p
+                    className="leading-relaxed mb-3 text-left overflow-hidden"
+                    style={{
+                      display: "-webkit-box",
+                      WebkitLineClamp: 7, // Limit to 3 lines
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {truncateText(card.description, 90)} {/* Limit to 50 words */}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
